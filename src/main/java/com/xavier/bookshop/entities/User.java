@@ -16,8 +16,6 @@ public class User implements Serializable {
     public User() {
     }
 
-    ;
-
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
@@ -84,10 +82,8 @@ public class User implements Serializable {
             return false;
         User other = (User) obj;
         if (id == null) {
-            if (other.id != null)
-                return false;
+            return other.id == null;
         } else return id.equals(other.id);
-        return true;
     }
 
 
